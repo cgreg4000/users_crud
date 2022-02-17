@@ -16,9 +16,9 @@ def new():
 @app.route('/process', methods=['POST'])
 def create():
     user = User.create_user(request.form)
-    print("**************************************")
+    print("****************************************")
     print(user)
-    return redirect(f"/users/{user.id}")
+    return redirect(f"/users/{user}")
 
 @app.route('/users/<int:user_id>')
 def show(user_id):
