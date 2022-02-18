@@ -11,19 +11,20 @@
 <body>
     <div class="container">
         <div class="flex">
-            <h1>Edit User 4</h1>
+            <h1>Edit {{user.id}}</h1>
             <a href="/users">Home</a>
         </div>
-        <form action="/process" method="post">
+        <form action="/users/update" method="post">
+            <input type="hidden" name="id" id="id" value="{{user.id}}">
             <label for="first_name">First Name:</label>
-            <input type="text" name="first_name" id="first_name"><br>
+            <input type="text" name="first_name" id="first_name" value="{{user.first_name}}"><br>
             <label for="last_name">Last Name:</label>
-            <input type="text" name="last_name" id="last_name"><br>
+            <input type="text" name="last_name" id="last_name" value="{{user.last_name}}"><br>
             <label for="email">Email:</label>
-            <input type="text" name="email" id="email"><br>
+            <input type="text" name="email" id="email" value="{{user.email}}"><br>
             <div class="flex-2">
                 <input class="btn" type="submit" value="Update">
-                <p><a href="">Show User</a></p>
+                <p><a href="/users/{{user.id}}">Show User</a></p>
             </div>
             
         </form>
